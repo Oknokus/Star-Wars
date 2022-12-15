@@ -1,12 +1,15 @@
-import cn from "classnames"
-import styles from './App.module.css';
+import PeoplePage from '../PeoplePage/PeoplePage';
 
-console.log(styles)
+import './App.css';
+
 
 const App = () => {
-  return (
-    <h1 className={cn(styles.header, styles.text)}>Hello!!</h1>  
+  return (   
+    <PeoplePage />
   )
 }
 
-export default App;
+export default App; 
+
+
+
