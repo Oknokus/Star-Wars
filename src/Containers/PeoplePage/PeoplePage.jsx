@@ -1,66 +1,38 @@
 import { useEffect, useState } from "react"
-import {getApiServer} from "../../utils/network"
+import { getApiServer } from "../../utils/network"
 import { API_PEOPLE } from "../../Constants/Api"
-
-import  "./PeoplePage.css"
-
+import { getPeopleId, getPeopleImage  } from "../../Services/getPeopleData"
+import PeopleList from "../../Components/PeopleList/PeopleList"
 
 const PeoplePage = () => {
     const [people, setPeople] = useState(null)
-    const getServer = async(url) => {
-        const result = await getApiServer(API_PEOPLE)
-	    const peopleList = result.results.map(({name, url}) => {
-            return{
+    const swapiServer = async(url) => {    
+        const body = await getApiServer(API_PEOPLE);
+	    const peopleList = body.results.map(({name, url}) =>{
+            const id = getPeopleId(url);
+            const img = getPeopleImage(id);
+                        
+            return {
                 name,
-                url
+                id,
+                img
             }
-        })
+        })      
         setPeople(peopleList)
     }
-    
     useEffect(() => {
-        getServer()
-        },[]);
-    
-    
+        swapiServer(API_PEOPLE);
+    },[])
+
     return(
         <>
-        {people && (<ul>   
-            {people.map(({name, url}) =>
-                <li key={name}>{name}</li>
-           )}       
-       </ul>)}        
+        {people && 
+        <PeopleList people={people}/>}             
         </>
     )
 }
 
-
 export default PeoplePage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
