@@ -1,16 +1,69 @@
-export const getApiServer = async(url) => {	
+import { API_PEOPLE } from "../../src/Constants/Api"
+
+export const getSwapiSerwer =  async(url) => {
+	const result = await fetch (API_PEOPLE);
 	try {
-		const result = await fetch(url);
 		if(!result.ok) {
-			console.log("ERROR: result status");
+			console.warn("ERROR: ", result.status)
 			return false;
-		}	
-		return await result.json();
+		}
 	} catch (error) {
-		console.log("ERROR: cath error");
-		return false;		
+		console.error("ERROR: cath error")	
+		return false;	
 	}	
+	return await result.json();		
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export const getApiServer = async(url) => {	
+// 	try {
+// 		const result = await fetch(url);
+// 		if(!result.ok) {
+// 			console.log("ERROR: result status");
+// 			return false;
+// 		}	
+// 		return await result.json();
+// 	} catch (error) {
+// 		console.log("ERROR: cath error");
+// 		return false;		
+// 	}	
+// }
 
 
 

@@ -1,15 +1,18 @@
 import { 
-    SWAPI_PEOPLE, SWAPI_SERVER, HTTPS,     
-    URL_IMG_PERSON, GUIDE_IMG_EXTENSION 
+    API_PEOPLE, 
+    WISUAL_GUIDE_API_PEOPLE_IMG,
+    WISUAL_GUIDE_DISPENSATION 
 } from "../Constants/Api"
+
 
 const getId = (url, category) => {
     const id = url
-    .replace(HTTPS+SWAPI_SERVER+category, "")
-    .replace(/\//g, "");    
+    .replace(API_PEOPLE, "")
+    .replace(/\//g, "");
+
     return id;
 }
-export const getPeopleId = url => getId(url, SWAPI_PEOPLE)
 
-export const getPeopleImage = id => `${URL_IMG_PERSON}/${id+GUIDE_IMG_EXTENSION}`
 
+export const getPeopleId = (url) => getId(url, API_PEOPLE) ;
+export const getPeopleImage = (id) => `${WISUAL_GUIDE_API_PEOPLE_IMG}/${id+WISUAL_GUIDE_DISPENSATION}`  
