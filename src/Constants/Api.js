@@ -1,18 +1,15 @@
 //SWAPI
-export const SWAPI_SERVER = "https://swapi.dev/api/";
-export const SWAPI_PEOPLE = "people";
-//API-SWAPI
-export const API_PEOPLE = SWAPI_SERVER+SWAPI_PEOPLE;
+const SWAPI_SERVER_PATH = "https://swapi.dev/api/";
+const SWAPI_CATEGORY= "people";
+export const SWAPI_CATEGORY_PEOPLE_PATH = SWAPI_SERVER_PATH+SWAPI_CATEGORY;
 
+//VISUALGUIDE
+export const VISUALGUIDE_SERVER_PATH = "https://starwars-visualguide.com/assets/img/";
+export const VISUALGUIDE_PEOPLE_PATH = "characters"
+export const VISUALGUIDE_EXTENTION = ".jpg"
 
+export const  VISUALGUIDE_CATEGORY_PEOPLE_IMG = VISUALGUIDE_SERVER_PATH+VISUALGUIDE_PEOPLE_PATH;
 
-// //WISUAL-GUIDE
-export const WISUAL_GUIDE_PEOPLE  = "https://starwars-visualguide.com/assets/img/"
-export const WISUAL_GUIDE_CHARACTERS = "characters";
-export const WISUAL_GUIDE_DISPENSATION = ".jpg"
-
-//WISUAL-GUIDE API IMG
-export const WISUAL_GUIDE_API_PEOPLE_IMG = WISUAL_GUIDE_PEOPLE+WISUAL_GUIDE_CHARACTERS;
 
 
 

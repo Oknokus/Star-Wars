@@ -1,18 +1,16 @@
-import { API_PEOPLE } from "../../src/Constants/Api"
-
-export const getSwapiSerwer =  async(url) => {
-	const result = await fetch (API_PEOPLE);
+export const getSwapiServer = async(url) => {
+	const result = await fetch(url)
 	try {
 		if(!result.ok) {
-			console.warn("ERROR: ", result.status)
+			console.log('ERROR: result status');
 			return false;
-		}
+		}		
 	} catch (error) {
-		console.error("ERROR: cath error")	
-		return false;	
-	}	
-	return await result.json();		
-}
+		console.log("ERROR: cath error");
+		return false;
+	}
+	return await result.json();
+} 
 
 
 
@@ -21,193 +19,6 @@ export const getSwapiSerwer =  async(url) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export const getApiServer = async(url) => {	
-// 	try {
-// 		const result = await fetch(url);
-// 		if(!result.ok) {
-// 			console.log("ERROR: result status");
-// 			return false;
-// 		}	
-// 		return await result.json();
-// 	} catch (error) {
-// 		console.log("ERROR: cath error");
-// 		return false;		
-// 	}	
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export const getApiServer = async(url) => {
-// 	try {
-// 		const result = await fetch(url);
-// 		if(!result.ok) {
-// 			console.warn("ERRORS: result status")
-// 			return false;
-// 		}
-// 		return await result.json();
-// 	} catch (error) {
-// 		console.warn("ERROR: catch error");
-// 		return false;		
-// 	}	
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export const getApiServer = async(url) => {
-// 	try {
-// 	const result = await fetch (url);	
-// 	if(!result.ok) {
-// 		console.warn("ERROR: ", result.status)
-// 		return false;
-// 	}
-// 		return await result.json(); 
-
-// 	} catch (error) {
-// 		console.log("ERROR: ", error.message);
-// 		return false;		
-// 	}	
-// }
 
 
 
