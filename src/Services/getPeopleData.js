@@ -1,24 +1,52 @@
 import { 
-    VISUALGUIDE_CATEGORY_PEOPLE_IMG, 
     SWAPI_CATEGORY_PEOPLE_PATH,
+    VISUALGUIDE_CATEGORY_PEOPLE_IMG, 
     VISUALGUIDE_EXTENTION 
-} from "../Constants/Api"
+} from "@Constants/Api";
 
 
-export const getIdImage = (url, category) => {
+const getPeopleData = (url) => {
     const id = url
     .replace(SWAPI_CATEGORY_PEOPLE_PATH, "")
-    .replace(/\//g,"");    
+    .replace(/\//g,"");
 
     return id;
 };
+ 
+export const getPeopleIdImg = (url) => {
+    return getPeopleData(url);
+};
 
 
-export const getPeopleIdImg = (url) => 
-    getIdImage(url, SWAPI_CATEGORY_PEOPLE_PATH);
+export const getPeopleImage = (id) => {
+    return `${VISUALGUIDE_CATEGORY_PEOPLE_IMG}/${id+VISUALGUIDE_EXTENTION}`
+};
 
-export const getPeopleImage = (id) => `${VISUALGUIDE_CATEGORY_PEOPLE_IMG}/${id+VISUALGUIDE_EXTENTION}`  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

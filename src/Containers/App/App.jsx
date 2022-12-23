@@ -1,4 +1,4 @@
-import PeoplePage from '../PeoplePage/PeoplePage';
+import PeoplePage from '@Containers/PeoplePage/PeoplePage';
 
 import './App.css';
 

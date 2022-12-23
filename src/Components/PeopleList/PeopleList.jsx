@@ -1,4 +1,6 @@
-import "./PeopleList.css"
+import PropTypes from 'prop-types';
+
+import "./PeopleList.css";
 
 const PeopleList = (({peopleState}) => {
     return(
@@ -17,6 +19,10 @@ const PeopleList = (({peopleState}) => {
         </>
     )
 });
+
+PeopleList.propTypes = {
+    peopleState: PropTypes.array
+}
 
 export default PeopleList;
 

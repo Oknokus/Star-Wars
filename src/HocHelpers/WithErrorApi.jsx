@@ -1,23 +1,139 @@
-import { useState } from "react";
-import ErrorMessage from "../Components/ErrorMessage/ErrorMessage"
+import { useState } from "react"
 
-export const WithErrorApi = View => {
-    return props => {
-        const [errorApi, setErrorApi] = useState(false);
-        return(        
-            <>    
-            {errorApi ? 
-             <ErrorMessage />
-                : 
-                (         
-                    <>        
-                <View setErrorApi={setErrorApi} 
-                {...props} />
-                </>                
+import ErrorMessage from "@Components/ErrorMessage/ErrorMessage"
+
+const WithErrorApi = View => {        
+   
+    return props => {          
+        const [errorApi, setErrorApi] = useState(false);    
+       
+            return (                
+                <>
+                {errorApi 
+                ? <ErrorMessage /> 
+                : (
+                    <View setErrorApi={setErrorApi}
+                    {...props}
+                    />
                 )
-            }
-            </>
-        )
-    }
+                }                
+                </>
+            )
+        }    
 }
+
+export default WithErrorApi;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { useState } from "react";
+// import ErrorMessage from "../Components/ErrorMessage/ErrorMessage"
+
+// export const WithErrorApi = View => {
+//     return props => {
+//         const [errorApi, setErrorApi] = useState(false);
+//         return(        
+//             <>    
+//             {errorApi ? 
+//              <ErrorMessage />
+//                 : 
+//                 (         
+//                 <>        
+//                 <View setErrorApi={setErrorApi} 
+//                 {...props} />
+//                 </>                
+//                 )
+//             }
+//             </>
+//         )
+//     }
+// }
  
