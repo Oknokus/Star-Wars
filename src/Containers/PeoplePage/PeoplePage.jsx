@@ -7,9 +7,8 @@ import { getSwapiServer } from "@utils/network"
 import { getPeopleImage, getPeopleIdImg } from "@Services/getPeopleData";
 import { SWAPI_CATEGORY_PEOPLE_PATH } from "@Constants/Api" 
 
-
-
 import "./PeoplePage.css"
+
 const PeoplePage = ({setErrorApi}) => {
     const [peopleState, setPeopleState] = useState(null);   
 
