@@ -7,7 +7,10 @@
         '@HocHelpers' : 'src/HocHelpers',
         '@Services' : 'src/Services',
         '@utils' : 'src/utils',
-        '@Containers' : 'src/Containers'       
+        '@Containers' : 'src/Containers',
+        '@Routes' : 'src/Routes', 
+        '@Statick' : 'src/Statick' 
+
       })(config);
   
       return config;

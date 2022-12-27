@@ -39,7 +39,7 @@ const PeoplePage = ({setErrorApi}) => {
 
     return(              
         <>
-            <h1>NAVIGATION</h1>
+            <h1 className='header__text'>Navigation</h1>
             <PeopleList peopleState={peopleState} />      
         </>              
     )

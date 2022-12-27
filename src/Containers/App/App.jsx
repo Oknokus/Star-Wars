@@ -1,28 +1,30 @@
-import {Routes, BrowserRouter, NavLink, Route } from "react-router-dom"
+import {Routes, BrowserRouter, Route } from "react-router-dom"
 
-import PeoplePage from '@Containers/PeoplePage/PeoplePage';
-import HomePage from '@Containers/HomePage/HomePage';
+import Header from "@Components/Header/Header"
+import routesConfig from "@Routes/RoutesConfig"
 
 import './App.css';
 
 
+
 const App = () => {
   return ( 
-    <>
-    
-    <BrowserRouter>
-   
-    <NavLink to="/"  exact="true">Home</NavLink>
-    <NavLink to="/people"  exact="true">People</NavLink>
-
+      
+    <BrowserRouter>  
+    <div className="wrapper">   
+    <Header />
 
     <Routes>
-    <Route path="/"  exact="true" element={<HomePage/>}  />
-    <Route path="/people"  exact="true" element={<PeoplePage/>}  />
+    {routesConfig.map((route, index) => (
+                    <Route
+                        key={index}
+                        path={route.path}
+                        element={route.element}
+                    />
+                ))}
     </Routes> 
-    </BrowserRouter> 
-   
-    </>
+    </div> 
+    </BrowserRouter>  
   )
 }
 
