@@ -9,7 +9,7 @@
         '@utils' : 'src/utils',
         '@Containers' : 'src/Containers',
         '@Routes' : 'src/Routes', 
-        '@Statick' : 'src/Statick' 
+        '@Statick' : 'src/Statick',        
 
       })(config);
   

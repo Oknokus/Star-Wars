@@ -12,9 +12,10 @@ const Header = () => {
                 <li>
                 <NavLink to="/people"  exact="true">People</NavLink>
                 </li>
-            </ul>
-           
-            
+                <li>
+                <NavLink to="/notfoundpage" exact="true">Not found</NavLink>
+                </li>
+            </ul>            
         </div>
     )  
 }
