@@ -10,10 +10,10 @@ const Header = () => {
                 <NavLink to="/"  exact="true">Home</NavLink>
                 </li>
                 <li>
-                <NavLink to="/people"  exact="true">People</NavLink>
+                <NavLink to="/people/?page=1"  exact="true">People</NavLink>
                 </li>
                 <li>
-                <NavLink to="/notfoundpage" exact="true">Not found</NavLink>
+                <NavLink to="/not-found" exact="true">Not found</NavLink>
                 </li>
             </ul>            
         </div>

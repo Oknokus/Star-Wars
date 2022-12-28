@@ -1,3 +1,9 @@
+/**
+ * Отправляет запрос feth на сервер 
+ * @param {STRING} url - url для запроса 
+ * @returns {PROMISE} - с результатом запроса
+ */
+
 export const getSwapiServer = async(url) => {
 	const result = await fetch(url)
 	try {
