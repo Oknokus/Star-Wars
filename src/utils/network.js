@@ -15,8 +15,8 @@ export const getSwapiServer = async(url) => {
 		console.log("ERROR: cath error");
 		return false;
 	}
-	return await result.json();
-} 
+	return await result.json()
+}; 
 
 
 

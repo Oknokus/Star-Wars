@@ -11,6 +11,6 @@ const NotFoundPage = () => {
                 <p className="text">No math for: { location.pathname}</p>
         </>
     )
-} 
+};
 
 export default NotFoundPage;

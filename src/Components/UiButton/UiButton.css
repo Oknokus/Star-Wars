@@ -1,0 +1,4 @@
+.button {
+    margin: var(--spacing-small);
+    padding: 10px 20px;
+}

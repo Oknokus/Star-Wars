@@ -20,7 +20,7 @@ const WithErrorApi = View => {
                 </>
             )
         }    
-}
+};
 
 export default WithErrorApi;
 

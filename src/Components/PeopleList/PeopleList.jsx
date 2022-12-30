@@ -22,7 +22,7 @@ const PeopleList = (({peopleState}) => {
 
 PeopleList.propTypes = {
     peopleState: PropTypes.array
-}
+};
 
 export default PeopleList;
 

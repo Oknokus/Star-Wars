@@ -56,7 +56,7 @@
 
     --theme-light-bgimage:   linear-gradient(to right bottom, #051937, #162454, #312d70, #533389, #7a359f);
     --theme-dark-bgimage:    linear-gradient(to right bottom, #000000, #160b11, #20141e, #281b2e, #2b2440);    
-    --theme-default-bgimage: url(./Statick/bg.jpg); 
+    --theme-default-bgimage: url(@Statick/bg.jpg); 
    
 }
 

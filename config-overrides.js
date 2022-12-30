@@ -9,7 +9,9 @@
         '@utils' : 'src/utils',
         '@Containers' : 'src/Containers',
         '@Routes' : 'src/Routes', 
-        '@Hooks' : 'src/Hooks',        
+        '@Hooks' : 'src/Hooks',  
+        '@UiButton' : 'src/Components',
+        '@Statick' : 'src/Statick',              
 
       })(config);
   

@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-import "./PeopleNavigation.css"
+import UiButton from "@Components/UiButton/UiButton";
+
+import "./PeopleNavigation.css";
 
 
 const PeopleNavigation = ({
@@ -14,21 +16,31 @@ const PeopleNavigation = ({
     const handleChangePrevious = () => getApiPeople(previousPage);
     return(
         <div className="container">  
+
             <Link to={`/people/?page=${startPage-1}`}>
-            <button 
-            onClick={handleChangePrevious} 
+
+            <UiButton 
+            text="Previsous"
             disabled={!previousPage}
-            className="buttons">PREVIOUS</button>
-            </Link>         
+            onClick={handleChangePrevious}
+            />
+            
+            </Link>  
+           
+
             <Link to={`/people/?page=${startPage+1}`}>
-            <button 
-            onClick={handleChangeNext} 
+
+            <UiButton 
+            text="NEXT"
             disabled={!nextPage}
-            className="buttons">NEXT</button>
+            onClick={handleChangeNext}
+            />         
+
             </Link>
+
         </div>
     )
-}
+};
 
 PeopleNavigation.protoTypes = {
     getApiPeople: PropTypes.func,
