@@ -22,8 +22,7 @@ const PeoplePage = ({setErrorApi}) => {
 
 
     const getApiPeople = async(url) => {
-        const data = await getSwapiServer(url);         
-         
+        const data = await getSwapiServer(url);  
       
         if(data) {
             const peopleList = data.results.map(({name, url}) => {   

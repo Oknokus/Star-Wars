@@ -20,9 +20,10 @@ const PeopleNavigation = ({
             <Link to={`/people/?page=${startPage-1}`}>
 
             <UiButton 
-            text="Previsous"
+            text="Previous"
             disabled={!previousPage}
             onClick={handleChangePrevious}
+            classTheme={"dark"}
             />
             
             </Link>  
@@ -31,9 +32,10 @@ const PeopleNavigation = ({
             <Link to={`/people/?page=${startPage+1}`}>
 
             <UiButton 
-            text="NEXT"
+            text="Next"
             disabled={!nextPage}
             onClick={handleChangeNext}
+            classTheme={"light "}
             />         
 
             </Link>
