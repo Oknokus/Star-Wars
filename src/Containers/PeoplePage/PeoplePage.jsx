@@ -9,9 +9,10 @@ import { getPeopleImage, getPeopleIdImg, getPeopleDataId } from "@Services/getPe
 import { SWAPI_CATEGORY_PEOPLE_PATH } from "@Constants/Api" 
 import { UseQueryParams } from "@Hooks/UseQueryParams" 
 
+
 import "./PeoplePage.css"
 
-const PeoplePage = ({setErrorApi}) => {
+const PeoplePage = ({ setErrorApi }) => {
     const [peopleState, setPeopleState] = useState(null);  
     const [nextPage, setNextPage] = useState(null);  
     const [previousPage, setPreviousPage] = useState(null);  
@@ -19,14 +20,15 @@ const PeoplePage = ({setErrorApi}) => {
      
     const query = UseQueryParams();  
     const queryPage = query.get("page")
+  
 
 
     const getApiPeople = async(url) => {
-        const data = await getSwapiServer(url);  
+        const data = await getSwapiServer(url);      
       
         if(data) {
             const peopleList = data.results.map(({name, url}) => {   
-                const id = getPeopleIdImg(url);
+                const id = getPeopleIdImg(url);               
                 const img = getPeopleImage(id);  
 
                 return {
