@@ -78,7 +78,7 @@ img {
     display: block;  
     width: 300px;
     margin: auto;
-   box-shadow: 0 0 2px var(--color-black);
+    box-shadow: 0 0 2px var(--color-black);
 }
 .header__text {
     line-height: 1.7;

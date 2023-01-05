@@ -6,9 +6,10 @@ import { SWAPI_CATEGORY_PEOPLE_PERSON_PATH } from "@Constants/Api";
 import WithErrorApi from "@HocHelpers/WithErrorApi";
 import { UseQueryParamsPage } from "@Hooks/UseQueryParams";
 import { getPeopleImage } from "@Services/getPeopleData";
-import PersonInfo from "@Components/PersonInfo/PersonInfo";
-import PersonPhoto from "@Components/PersonPhoto/PersonPhoto"
 
+import PersonInfo from "@Components/PersonInfo/PersonInfo";
+import PersonPhoto from "@Components/PersonPhoto/PersonPhoto";
+import PersonGoBack from "@Components/PersonGoBack/PersonGoBack";
 import "./PersonPage.css";
 
 const PersonPage = ({setErrorApi}) => {  
@@ -56,14 +57,19 @@ const PersonPage = ({setErrorApi}) => {
        })()
    },[])
         
-    return(        
-        <div className="personPage_container">          
+    return(  
+        <>              
+        <PersonGoBack />              
+        <div className="personPage_container">  
+      
+              
         <div>    
         <PersonPhoto personPhoto={personPhoto}/> 
         </div>
         <PersonInfo personState={personState} />
         
         </div>
+        </>
     )    
 }
 
