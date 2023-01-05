@@ -15,7 +15,7 @@ export const VISUALGUIDE_EXTENTION = ".jpg";
 export const  VISUALGUIDE_CATEGORY_PEOPLE_IMG = VISUALGUIDE_SERVER_PATH+VISUALGUIDE_PEOPLE_PATH;
 
 //API PAGE H_REF CUT
-export const PAGE_HREF = "http://localhost:3001/people/";
+export const PAGE_HREF = "http://localhost:3000/people/";
 
 
 

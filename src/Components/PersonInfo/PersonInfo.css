@@ -1,0 +1,10 @@
+.list__itemPerson {
+    text-decoration: none;
+    list-style-type: none;
+    width: 200px;
+    border-radius: var(--border-radius-small);
+    background-color: transparent;
+    cursor: pointer;  
+    text-align: center; 
+    color: white;  
+}

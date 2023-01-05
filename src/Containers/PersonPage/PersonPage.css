@@ -1,14 +1,8 @@
 .personPage_container {
     display: flex;
     justify-content: center;
+    align-items: center;  
 }
 
-.list__itemPerson {
-    text-decoration: none;
-    list-style-type: none;
-    width: 190px;
-    border-radius: var(--border-radius-small);
-    background-color: white;
-    cursor: pointer;  
-    text-align: center;
-}
+
+

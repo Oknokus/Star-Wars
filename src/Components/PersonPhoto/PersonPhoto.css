@@ -1,0 +1,5 @@
+.imgPerson {
+    width: 200px;
+    border-radius: var(--border-radius-small);  
+    cursor: pointer; 
+}

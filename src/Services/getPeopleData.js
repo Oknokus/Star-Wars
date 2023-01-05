@@ -15,9 +15,9 @@ export const getPeopleDataId = (url) => {
 
 export const getPeopleData = (url) => {
     const id = url
-    .replace(SWAPI_CATEGORY_PEOPLE_PATH, "")  
-   .replace(SWAPI_URL_REPLACE, "")
-   .replace(/\//g, "")
+    .replace(SWAPI_CATEGORY_PEOPLE_PATH,"")  
+   .replace(SWAPI_URL_REPLACE,"")
+   .replace(/\//g,"")
 
     return id;
 };

@@ -8,11 +8,12 @@ export const UseQueryParams = () => {
 };
 
 
-export const UseQueryParamsPage = (url) => {    
-    const id = document.location.href;
-    const pageId = id.replace(PAGE_HREF, "");        
+export const UseQueryParamsPage = () => {    
+    const id = window.location.href;   
+    const page = id
+    .replace(PAGE_HREF,""); 
 
-    return pageId;    
+    return page;   
 };
 
 
