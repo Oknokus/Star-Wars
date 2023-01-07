@@ -3,7 +3,6 @@
  * @param {STRING} url - url для запроса 
  * @returns {PROMISE} - с результатом запроса
  */
-
 export const getSwapiServer = async(url) => {
 	const result = await fetch(url)
 	try {
@@ -17,6 +16,31 @@ export const getSwapiServer = async(url) => {
 	}
 	return await result.json()
 }; 
+
+export const queryUrlFilms = async(url) => {
+	const res = await Promise.all(url.map(res => {
+		return fetch(res).then(res => res.json())
+	 }));
+
+	 return res
+	};
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
 
 
 

@@ -10,17 +10,22 @@ import { getPeopleImage } from "@Services/getPeopleData";
 import PersonInfo from "@Components/PersonInfo/PersonInfo";
 import PersonPhoto from "@Components/PersonPhoto/PersonPhoto";
 import PersonGoBack from "@Components/PersonGoBack/PersonGoBack";
+import FilmsPage from "@Components/FilmsPage/FilmsPage"
+
+
 import "./PersonPage.css";
 
 const PersonPage = ({setErrorApi}) => {  
     const [personState, setPersonState] = useState(null); 
     const [personPhoto, setPersonPhoto] = useState(null); 
+    const [personFilms, setPersonFilms] = useState([]); 
 
     const pageId = UseQueryParamsPage();   
         
    
     useEffect(()=> {
-       (async() => { 
+       (
+        async() => { 
         const result = await getSwapiServer(`${SWAPI_CATEGORY_PEOPLE_PERSON_PATH}/${pageId}`); 
                     
            if(result) { 
@@ -34,7 +39,8 @@ const PersonPage = ({setErrorApi}) => {
             gender,
             height,
             mass,
-            skin_color                              
+            skin_color,
+            films                              
         }) => {               
             return {
                 name,
@@ -43,14 +49,19 @@ const PersonPage = ({setErrorApi}) => {
                 gender,
                 height,
                 mass,
-                skin_color                                                                    
+                skin_color,
+                films                                                                    
             }                        
         });        
         setPersonPhoto(getPeopleImage(pageId));       
         setPersonState(personList);
-        setErrorApi(false);
-       
-          
+
+        if(result.films) {
+         setPersonFilms(result.films)
+        };
+        
+
+        setErrorApi(false);           
     } else {
         setErrorApi(true);
     }
@@ -58,16 +69,19 @@ const PersonPage = ({setErrorApi}) => {
    },[])
         
     return(  
-        <>              
-        <PersonGoBack />              
+        <>    
+        <div className="link-go_back">          
+        <PersonGoBack />        
+        </div>   
+
         <div className="personPage_container">  
-      
-              
-        <div>    
+                    
+        <div>  
         <PersonPhoto personPhoto={personPhoto}/> 
         </div>
+
         <PersonInfo personState={personState} />
-        
+        <FilmsPage personFilms={personFilms} />   
         </div>
         </>
     )    

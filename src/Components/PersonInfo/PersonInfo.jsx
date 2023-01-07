@@ -14,7 +14,7 @@ const PersonInfo = (({personState}) => {
                 gender,
                 height,
                 mass,
-                skin_color                          
+                skin_color                                       
             }) =>  
                 <li className="list__itemPerson" key={name}> 
                     <h1>{name}</h1>
@@ -23,12 +23,13 @@ const PersonInfo = (({personState}) => {
                     <p>Gender: {gender}</p>
                     <p>Height: {height}</p>
                     <p>Mass: {mass}</p> 
-                    <p>Skin color: {skin_color}</p>                      
+                    <p>Skin color: {skin_color}</p>  
                 </li>    
             )            
         }           
         </ul>
-        }   </>
+        }   
+        </>
     )
 })
 
