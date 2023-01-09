@@ -17,13 +17,13 @@ export const getSwapiServer = async(url) => {
 	return await result.json()
 }; 
 
-export const queryUrlFilms = async(url) => {
-	const res = await Promise.all(url.map(res => {
+export const queryPathUrlFilms = async(url) => {
+	const result = await Promise.all(url.map(res => {
 		return fetch(res).then(res => res.json())
-	 }));
+	}))
 
-	 return res
-	};
+	return result;
+}
 
 
 

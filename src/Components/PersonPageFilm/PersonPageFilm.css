@@ -1,0 +1,18 @@
+.list__item {
+    display: flex;
+    align-items: center;
+    min-width: 280px;
+    color: black;
+    text-align: center;
+    padding: 10px 10px;    
+}
+.item__episide {
+    padding: var(--spacing-ultrasmall);
+    border-radius: var(--border-radius-small);
+    background-color: rgb(228, 86, 86);
+}
+
+.item__title {
+    text-shadow: yellow;
+}
+

@@ -11,27 +11,27 @@ export default {
 const Template = (args) => <UiButton {...args} />;
 
 const prors = {
-    text: "HELLO",
-    disabled: false, 
-    onClick: ()=> console.log("button onClick"),
-    theme: "light"
+  theme: "black",
+  isShadow: false,
+  classes: "" 
 }
 
-export const Light = Template.bind({});
-Light.args = {
+export const Black = Template.bind({});
+Black.args = {
  ...prors,
-  theme: 'light',
+  theme: 'black',
 };
 
-export const Dark = Template.bind({});
-Dark.args = {
+export const Blue = Template.bind({});
+Blu.args = {
  ...prors,
-  theme: 'dark',
+  theme: 'blue', 
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
+export const White = Template.bind({});
+White.args = {
  ...prors,
- disabled: true,
+  theme: "white",
+  isShadow: true,
 };  
 

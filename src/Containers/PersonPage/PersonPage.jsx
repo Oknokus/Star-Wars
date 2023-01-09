@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import PropTypes from 'prop-types';
 
 import { getSwapiServer } from "@utils/network";
@@ -6,16 +6,24 @@ import { SWAPI_CATEGORY_PEOPLE_PERSON_PATH } from "@Constants/Api";
 import WithErrorApi from "@HocHelpers/WithErrorApi";
 import { UseQueryParamsPage } from "@Hooks/UseQueryParams";
 import { getPeopleImage } from "@Services/getPeopleData";
+import UiLoading from "@Components/UiLoading/UiLoading"
 
-import PersonInfo from "@Components/PersonInfo/PersonInfo";
 import PersonPhoto from "@Components/PersonPhoto/PersonPhoto";
+import PersonInfo from "@Components/PersonInfo/PersonInfo";  
 import PersonGoBack from "@Components/PersonGoBack/PersonGoBack";
-import FilmsPage from "@Components/FilmsPage/FilmsPage"
 
 
 import "./PersonPage.css";
 
-const PersonPage = ({setErrorApi}) => {  
+const PersonPageFilm = React.lazy(()=> import("@Components/PersonPageFilm/PersonPageFilm"));
+
+
+
+
+
+
+
+const PersonPage = ({ setErrorApi }) => {  
     const [personState, setPersonState] = useState(null); 
     const [personPhoto, setPersonPhoto] = useState(null); 
     const [personFilms, setPersonFilms] = useState([]); 
@@ -26,8 +34,8 @@ const PersonPage = ({setErrorApi}) => {
     useEffect(()=> {
        (
         async() => { 
-        const result = await getSwapiServer(`${SWAPI_CATEGORY_PEOPLE_PERSON_PATH}/${pageId}`); 
-                    
+        const result = await getSwapiServer(`${SWAPI_CATEGORY_PEOPLE_PERSON_PATH}/${pageId}`);
+
            if(result) { 
            const arr = [];                        
            arr.push(result);          
@@ -41,7 +49,8 @@ const PersonPage = ({setErrorApi}) => {
             mass,
             skin_color,
             films                              
-        }) => {               
+        }) => 
+        {               
             return {
                 name,
                 birth_year,
@@ -55,12 +64,11 @@ const PersonPage = ({setErrorApi}) => {
         });        
         setPersonPhoto(getPeopleImage(pageId));       
         setPersonState(personList);
-
-        if(result.films) {
-         setPersonFilms(result.films)
-        };
         
-
+        if(result.films) {       
+            setPersonFilms(result.films)
+        };
+                  
         setErrorApi(false);           
     } else {
         setErrorApi(true);
@@ -69,19 +77,25 @@ const PersonPage = ({setErrorApi}) => {
    },[])
         
     return(  
-        <>    
-        <div className="link-go_back">          
-        <PersonGoBack />        
+        <>                  
+        <div className="link-go_back">
+         <PersonGoBack />
         </div>   
-
+        
         <div className="personPage_container">  
                     
-        <div>  
-        <PersonPhoto personPhoto={personPhoto}/> 
+        <div>        
+         { personPhoto && <PersonPhoto personPhoto={personPhoto}/> }        
         </div>
 
-        <PersonInfo personState={personState} />
-        <FilmsPage personFilms={personFilms} />   
+        { personState && <PersonInfo personState={personState} /> }
+        
+        { personFilms && (
+            <Suspense fallback={ <UiLoading /> }>
+                <PersonPageFilm personFilms={personFilms} />
+            </Suspense> )
+        }
+
         </div>
         </>
     )    
@@ -89,7 +103,7 @@ const PersonPage = ({setErrorApi}) => {
 
 PersonPage.propTypes = {   
     setErrorApi: PropTypes.func
-}
+};
 
 
 export default WithErrorApi(PersonPage);

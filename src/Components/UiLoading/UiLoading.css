@@ -1,0 +1,15 @@
+.loading_container {
+    margin-left: 200px;
+    text-align: center;
+    color: white;
+}
+
+.loading {
+    width: 80px;
+    height: 80px;     
+}
+
+.isShadow {
+    box-shadow: 5px 3px 10px 1px #fff;
+}
+
